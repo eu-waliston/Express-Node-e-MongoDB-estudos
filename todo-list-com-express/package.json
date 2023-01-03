@@ -10,7 +10,8 @@
   "author": "waliston",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^6.8.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

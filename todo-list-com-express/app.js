@@ -1,7 +1,10 @@
 const express = require('express');
+const { default: mongoose } = require('mongoose');
 const chelistRouter = require('./src/routes/checklist')
-const app = express();
+require('./config/database')
 
+
+const app = express();
 app.use(express.json());
 
 app.use('/checklists', chelistRouter);
