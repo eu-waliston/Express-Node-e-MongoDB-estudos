@@ -1,4 +1,4 @@
-const uri = 'mongodb://localhost/todo-list';
+const uri = 'mongodb+srv://WeSantos:3351334140028922@taks.cpqojhm.mongodb.net/?retryWrites=true&w=majority';
 
 const options = {
     useNewUrlParser: true,
