@@ -1,4 +1,4 @@
-const uri = 'mongodb+srv://WeSantos:3351334140028922@taks.cpqojhm.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://WeSantos:4002892233513341@taks.cpqojhm.mongodb.net/?retryWrites=true&w=majority';
 
 const options = {
     useNewUrlParser: true,
