@@ -1,11 +1,15 @@
-<%- include('../layouts/header.ejs', {title: 'checklist.name'}) %> <%-
-include('../layouts/menu.ejs') %>
-<section class="section">
-  <div class="container">
-    <h1 class="title size-4">Nova Lista</h1>
+<%- include('../layouts/header', { title: 'New Checklist' }) %>
 
-    <%- include('form'), {method: 'post', url: '/checklists', checklist:
-    checklist} %>
-  </div>
+<%- include('../layouts/menu') %>
+
+<section class="section">
+    <div class="container">
+        <div class="main-card card">
+            <h1 class="title size-4">New List</h1>
+    
+            <%- include('form', { url: '/checklists?_method=post', checklist: checklist}) %> 
+        </div>
+    </div>
 </section>
-<%- include('../layouts/footer.ejs') %>
+
+<%- include('../layouts/footer') %>
