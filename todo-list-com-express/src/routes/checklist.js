@@ -78,9 +78,11 @@ router.delete("/:id", async (req, res) => {
   try {
     let { name } = req.body;
     let checklist = await Checklist.findByIdAndRemove(req.params.id);
-    res.status(200).json(checklist);
+    res.redirect('/checklists')
   } catch (error) {
-    res.status(422).json(error);
+    res
+    .status(500)
+    .render("pages/error", { error: "Erro ao deletar a lista de tarefas" });
   }
 });
 
