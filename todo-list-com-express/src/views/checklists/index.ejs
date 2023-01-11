@@ -1,5 +1,5 @@
-<%- include('../layouts/header.ejs', {title: 'Lista de Tarefas'}) %> 
-<%- include('../layouts/menu.ejs') %>
+<%- include('../layouts/header.ejs', {title: 'Lista de Tarefas'}) %> <%-
+include('../layouts/menu.ejs') %>
 
 <section class="section">
   <div class="container">
@@ -15,14 +15,14 @@
     </div>
 
     <div class="columns is-multiline">
-      <% checklists.forEach( checklist => { %> 
-        <div class="column is-one-quarter">
+      <% checklists.forEach( checklist => { %>
+      <div class="column is-one-quarter">
         <div class="card has-background-white-ter">
           <div class="card-content">
-            <p class="subtitle is-size-5">
-              <%= checklist.name %> 
+            <p class="subtitle is-size-5"><%= checklist.name %></p>
+            <p class="subtitle is-size-6">
+              <%= checklist.tasks.count %> tarefas
             </p>
-            <p class="subtitle is-size-6"><%= checklist.tasks.count %> tarefas</p>
           </div>
           <footer class="card-footer">
             <p class="card-footer-item">
@@ -37,13 +37,17 @@
             </p>
             <p class="card-footer-item">
               <span>
-                <a href="/checklists/<%= checklist.id%>?_method=delete" class="has-text-danger">Remover</a>
+                <a
+                  href="/checklists/<%= checklist.id%>?_method=delete"
+                  class="has-text-danger"
+                  >Remover</a
+                >
               </span>
             </p>
           </footer>
         </div>
-        </div>
-      <% }) %> 
+      </div>
+      <% }) %>
     </div>
   </div>
 </section>
