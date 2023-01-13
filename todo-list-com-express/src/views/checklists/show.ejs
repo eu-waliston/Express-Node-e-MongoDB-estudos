@@ -21,8 +21,8 @@ include('../layouts/menu.ejs') %>
 
     <% checklist.tasks.forEach(task => {%> 
       <div class="columns">
-        <div class="column is-four-fifths <%= task.done ? 'is-done' : '' %>">
-          <input type="checkbox" /> <%= task.name , task.done ? 'checked' : '' %> 
+        <div class="column is-four-fifths <%= task.done ? 'has-text-success is-italic' : '' %>">
+          <input type="checkbox" onchange="setTagAsDone(this, '<%= task._id %>')"/> <%= task.name , task.done ? 'checked' : '' %> 
         </div>
 
         <div class="column is-one-fifth">
