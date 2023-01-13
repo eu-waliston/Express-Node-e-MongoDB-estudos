@@ -1,0 +1,36 @@
+<%- include('../layouts/header', { title: 'New Task' }) %> <%-
+include('../layouts/menu') %>
+
+<section class="section">
+  <div class="container">
+    <div class="main-card card">
+      <h1 class="title size-4">New Tarefa</h1>
+
+      <form action="/checklists/<%= checklist._id%>/tasks" method="POST">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              name="task[name]"
+              placeholder="Ex.: Things to study"
+              value="<%= checklist.name %>"
+              required
+              autofocus
+            />
+            <% if(task.error && task.error.hasOwnProperty('name')) {
+            %>
+            <p class="is-danger help"><%= task.error.name.message %></p>
+            <% } %>
+          </div>
+        </div>
+
+        <button type="submit" class="button is-success">Save</button>
+        <a href="/checklists/<%= checklist._id%>" class="button">Cancel</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('../layouts/footer') %>
