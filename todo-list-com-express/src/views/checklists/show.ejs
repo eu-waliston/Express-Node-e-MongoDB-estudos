@@ -21,12 +21,12 @@ include('../layouts/menu.ejs') %>
 
     <% checklist.tasks.forEach(task => {%> 
       <div class="columns">
-        <div class="column is-four-fifths">
-          <input type="checkbox" /> <%= task.name %> 
+        <div class="column is-four-fifths <%= task.done ? 'is-done' : '' %>">
+          <input type="checkbox" /> <%= task.name , task.done ? 'checked' : '' %> 
         </div>
 
         <div class="column is-one-fifth">
-          <button class="button is-danger is-small">Remover</button>
+          <a href="/tasks/<%= task._id %>?_method=delete" class="button is-danger is-small">Remove</a>
         </div>
       </div>
     <% }) %> 
